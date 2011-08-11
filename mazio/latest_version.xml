@@ -1,0 +1,15 @@
+<versions>
+  <latest-version major="1" minor="2" revision="1" />
+  <download-url>http://mazio.googlecode.com/files/mazio-setup-1.2.1.exe</download-url>
+  <release-notes>
+    <![CDATA[
+            <html><body>
+            <p align="center">With pleasure, Kalamon Software presents Mazio 1.2.1</p>
+            <p>changes:</p>
+            <ul>
+              <li>fixed handling screenshots passed from <a href="http://www.kalamonsoft.com/dbjr">DeskBeam Junior</a> screencasting application</li>
+            </ul>
+            </body></html>
+            ]]>
+  </release-notes>
+</versions>

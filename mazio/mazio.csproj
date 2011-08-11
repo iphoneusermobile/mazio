@@ -1,0 +1,893 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{22AE9EC3-8D12-4B9F-A2CA-3590BE32723A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mazio</RootNamespace>
+    <AssemblyName>mazio</AssemblyName>
+    <ManifestCertificateThumbprint>D481F89B5EB0423E34870A57D9101B9FCB9D6E31</ManifestCertificateThumbprint>
+    <ManifestKeyFile>mazio_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>true</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <ApplicationIcon>res\trayIcon.Icon.ico</ApplicationIcon>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <PublishUrl>C:\Documents and Settings\Właściciel\Pulpit\m\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <SupportUrl>http://spartez.com</SupportUrl>
+    <ProductName>Mazio ClickOnce</ProductName>
+    <PublisherName>Spartez</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <AutorunEnabled>true</AutorunEnabled>
+    <TrustUrlParameters>true</TrustUrlParameters>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.90.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FlickrNet, Version=2.1.5.19851, Culture=neutral, PublicKeyToken=2491df59efa5d132">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\FlickrNet\Release\FlickrNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Client, Version=1.2.1.0, Culture=neutral, PublicKeyToken=04a59ca9b0273830, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Google Data API\Google.GData.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Extensions, Version=1.2.1.0, Culture=neutral, PublicKeyToken=0b4c5df2ebf20876, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Google Data API\Google.GData.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.GData.Photos, Version=1.2.1.0, Culture=neutral, PublicKeyToken=a25b50f2e8e3887a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Google Data API\Google.GData.Photos.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.Direct3D, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.DirectX.DirectDraw, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="soap\jira\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="src\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\BackgroundTransformator.cs" />
+    <Compile Include="src\BackgroundTransformatorSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\BackgroundTransformatorSettings.Designer.cs">
+      <DependentUpon>BackgroundTransformatorSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Command.cs" />
+    <Compile Include="src\CommanLineParser.cs" />
+    <Compile Include="src\ConfigDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ConfigDialog.Designer.cs">
+      <DependentUpon>ConfigDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Constants.cs" />
+    <Compile Include="src\CropSettingsPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\CropSettingsPanel.Designer.cs">
+      <DependentUpon>CropSettingsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ExceptionDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ExceptionDialog.Designer.cs">
+      <DependentUpon>ExceptionDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Format.cs" />
+    <Compile Include="src\NewVersionInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\NewVersionInfo.Designer.cs">
+      <DependentUpon>NewVersionInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\QuadDistort.cs" />
+    <Compile Include="src\ServerTypeCommandLineParser.cs" />
+    <Compile Include="src\SettingsWrapper.cs" />
+    <Compile Include="src\ShadowSettingsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\ShapeFactory.cs" />
+    <Compile Include="src\ShapeSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\ShapeSettings.Designer.cs">
+      <DependentUpon>ShapeSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\ShapeSettingsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\shapes\BrutallyKillableTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="src\shapes\Censor.cs" />
+    <Compile Include="src\shapes\Picture.cs" />
+    <Compile Include="src\shapes\PonyVille.cs" />
+    <Compile Include="src\shapes\Arrow.cs" />
+    <Compile Include="src\shapes\CropBox.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\shapes\MagnifyingGlass.cs" />
+    <Compile Include="src\shapes\Oval.cs" />
+    <Compile Include="src\shapes\Pencil.cs" />
+    <Compile Include="src\shapes\RectangleShape.cs" />
+    <Compile Include="src\shapes\ScreenShot.cs" />
+    <Compile Include="src\shapes\TextShape.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="src\uploaders\FormUpload.cs" />
+    <Compile Include="src\uploaders\MeetingRoomUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uploaders\MeetingRoomUpload.Designer.cs">
+      <DependentUpon>MeetingRoomUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uploaders\FlickrAuthorizer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uploaders\FlickrAuthorizer.Designer.cs">
+      <DependentUpon>FlickrAuthorizer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uploaders\FlickrUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uploaders\FlickrUpload.Designer.cs">
+      <DependentUpon>FlickrUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Grabber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\GroupCommand.cs" />
+    <Compile Include="src\ImageProcessor.cs" />
+    <Compile Include="src\uploaders\JiraUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uploaders\JiraUpload.Designer.cs">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\shapes\Line.cs" />
+    <Compile Include="src\Mazio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\Mazio.Designer.cs">
+      <DependentUpon>Mazio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\uploaders\PicasawebUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uploaders\PicasawebUpload.Designer.cs">
+      <DependentUpon>PicasawebUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="src\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\BackgroundTransformatorSettings.resx">
+      <DependentUpon>BackgroundTransformatorSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ConfigDialog.resx">
+      <DependentUpon>ConfigDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\CropSettingsPanel.resx">
+      <DependentUpon>CropSettingsPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ExceptionDialog.resx">
+      <DependentUpon>ExceptionDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\NewVersionInfo.resx">
+      <DependentUpon>NewVersionInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\ShapeSettings.resx">
+      <DependentUpon>ShapeSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uploaders\MeetingRoomUpload.resx">
+      <DependentUpon>MeetingRoomUpload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uploaders\FlickrAuthorizer.resx">
+      <DependentUpon>FlickrAuthorizer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uploaders\FlickrUpload.resx">
+      <DependentUpon>FlickrUpload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uploaders\JiraUpload.resx">
+      <DependentUpon>JiraUpload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\Mazio.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Mazio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uploaders\PicasawebUpload.resx">
+      <DependentUpon>PicasawebUpload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\uploaders\SkitchUpload.resx">
+      <DependentUpon>SkitchUpload.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="src\util\GraphicsUtils.cs" />
+    <Compile Include="src\util\IniFile.cs" />
+    <Compile Include="src\util\Rot13.cs" />
+    <Compile Include="src\ScreenshotEditor.cs" />
+    <Compile Include="src\Settings.cs" />
+    <Compile Include="src\Shape.cs" />
+    <Compile Include="src\uploaders\SkitchUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\uploaders\SkitchUpload.Designer.cs">
+      <DependentUpon>SkitchUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\UndoRedo.cs" />
+    <Compile Include="src\UploadType.cs" />
+    <Compile Include="src\util\Win32.cs" />
+    <Compile Include="src\View.cs" />
+    <Compile Include="src\ViewParameters.cs" />
+    <Compile Include="src\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\trayIcon.Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="mazio_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="setup.nsi" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="soap\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="latest_version.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="res\arrow-1.png" />
+    <None Include="res\arrow-2.png" />
+    <Content Include="res\arrow.png" />
+    <Content Include="res\arrow_in.png" />
+    <Content Include="res\camera.png" />
+    <Content Include="res\censor.png" />
+    <Content Include="res\circle.png" />
+    <None Include="LICENSE" />
+    <None Include="Properties\app.manifest" />
+    <None Include="res\croptight.png" />
+    <None Include="res\document-open.png" />
+    <Content Include="res\edit-clear.png" />
+    <None Include="res\edit-copy.png" />
+    <None Include="res\edit-paste.png" />
+    <Content Include="res\edit-redo.png" />
+    <Content Include="res\edit-undo.png" />
+    <Content Include="res\emblem-favorite-16.png" />
+    <None Include="res\emblem-favorite-32.png" />
+    <Content Include="res\emblem-favorite.png" />
+    <Content Include="res\emblem-system.png" />
+    <Content Include="res\go-bottom.png" />
+    <Content Include="res\go-down.png" />
+    <Content Include="res\go-top.png" />
+    <Content Include="res\go-up.png" />
+    <Content Include="res\handle-selected.png" />
+    <Content Include="res\handle.png" />
+    <Content Include="res\help.png" />
+    <Content Include="res\line.png" />
+    <Content Include="res\logo.png" />
+    <Content Include="res\move.png" />
+    <Content Include="res\pencil.png" />
+    <None Include="res\logo.xcf" />
+    <None Include="res\preferences-system.png" />
+    <Content Include="res\picturebox.png" />
+    <Content Include="res\README.txt" />
+    <Content Include="res\rectangle.png" />
+    <Content Include="res\red_star-16.png" />
+    <Content Include="res\reflection.png" />
+    <Content Include="res\settings-close.png" />
+    <Content Include="res\settings-open.png" />
+    <Content Include="res\shape_handles.png" />
+    <Content Include="res\stock-tool-crop-16.png" />
+    <Content Include="res\text.png" />
+    <None Include="res\yellow_star-32.png" />
+    <Content Include="res\trayIcon2.Icon.ico" />
+    <Content Include="res\update.gif" />
+    <Content Include="res\yellow_star.png" />
+    <Content Include="src\ffmazio\components\handleProtocol.js" />
+    <Content Include="CONTRIBUTORS.txt" />
+    <None Include="res\zoom.png" />
+    <None Include="soap\jira\jirasoapservice-v2.wsdl" />
+    <None Include="soap\jira\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="soap\jira\RemoteAttachment.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteAvatar.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteComment.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteComponent.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteConfiguration.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteField.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteFilter.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteGroup.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteIssue.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteIssueType.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteNamedObject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemotePermission.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemotePermissionScheme.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemotePriority.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteProject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteProjectRole.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteProjectRoleActors.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteResolution.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteRoleActors.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteScheme.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteSecurityLevel.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteServerInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteStatus.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteUser.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteVersion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="soap\jira\RemoteWorklog.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="FlickrNet">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Google.GData.Client">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Google.GData.Extensions">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Google.GData.Photos">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="latest_version.xml">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\arrow.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\camera.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\censor.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\circle.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\edit-clear.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\edit-redo.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\edit-undo.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\emblem-favorite-16.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\emblem-favorite.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\go-bottom.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\go-down.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\go-top.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\go-up.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\handle-selected.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\handle.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\help.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\line.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\move.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\pencil.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\README.txt">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\rectangle.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\red_star-16.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\reflection.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\settings-close.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\settings-open.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\text.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="res\yellow_star.png">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="src\ffmazio\components\handleProtocol.js">
+      <Visible>False</Visible>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://studio.atlassian.com//rpc/soap/jirasoapservice-v2%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>soap\jira\</RelPath>
+      <UpdateFromURL>https://studio.atlassian.com//rpc/soap/jirasoapservice-v2%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>mazio_jira_JiraSoapServiceService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>"c:\Program Files\NSIS\makensis.exe" $(ProjectDir)\setup.nsi
+copy $(TargetDir)\mazio.exe $(ProjectDir)\src\ffmazio\components
+"C:\Program Files\7-Zip\7z" a $(TargetDir)\ffmazio.xpi -tZip -xr!.svn $(ProjectDir)\src\ffmazio\*</PostBuildEvent>
+  </PropertyGroup>
+</Project>

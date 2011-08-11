@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Mazio Plugin for JIRA - Help</title>
+</head>
+
+<body style="margin:0;font-size:12px;font-family:sans-serif;">
+
+<div style="padding:1em;"><a href="../../browse/${backTo}">Back to ${backTo}</a></div>
+
+    <div style="width:50em;position:absolute;top:4em;left:50%;margin-left:-25em;text-align:justify;background:#f0f0f0;">
+    <div style="padding:2em;">
+        
+Launching Mazio is done by invoking the "mazio:" pseudo-protocol.
+This pseudo-protocol is registered by the Mazio application's setup program.
+<br/><br/>
+Mazio can be installed from <a href="http://code.google.com/p/mazio/">Google Code</a>.
+This version of the mazio-jira plugin <b>requires Mazio version 1.0.0</b> or newer
+
+    </div>
+    </div>
+</body>
+</html>

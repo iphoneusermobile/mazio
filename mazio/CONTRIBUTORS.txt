@@ -1,0 +1,12 @@
+﻿Folks that provided code patches and other stuff are (*)(**):
+---------------------------------------------------------
+
+* olyen2007 (http://code.google.com/u/olyen2007/) - multi-monitor support
+* Ingo Kitzmann <ingo.kitzmann at gmail.com> 
+	- bug #58 - "portable mazio"- writing settings to ini file instead of registry if launched not from install location
+	- bug #57 - command line switch to start in grabbing mode
+	- bug #55 - magnifier for the grabber
+	
+(*)  - I have listed credits for graphics in a separate res/README.txt file
+(**) - code "stolen" fromother open source projects, technical articles, 
+       tutorials and whatnot is credited in the places where I pasted it
