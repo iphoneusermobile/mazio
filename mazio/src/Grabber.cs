@@ -119,6 +119,8 @@ namespace mazio {
             Size = activeScreenBounds.Size;
             Location = activeScreenBounds.Location;
             Cursor.Clip = activeScreenBounds;
+            AutoScaleMode = AutoScaleMode.None;
+            AutoScale = false;
 
             Paint += grabberPaint;
             MouseClick += onMouseClick;
@@ -145,7 +147,8 @@ namespace mazio {
             // using the pixel format of the Graphics created by 
             // the Form.CreateGraphics() method, which returns a 
             // Graphics object that matches the pixel format of the form.
-            grafx = context.Allocate(CreateGraphics(), new Rectangle(0, 0, Size.Width, Size.Height));
+            Graphics graphics = CreateGraphics();
+            grafx = context.Allocate(graphics, new Rectangle(0, 0, Size.Width, Size.Height));
 
 
             Bitmap b = createCursorBitmap();

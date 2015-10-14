@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Kalamon Software")]
 [assembly: AssemblyProduct("Mazio")]
-[assembly: AssemblyCopyright("Copyright ©2008-2011 Janusz Gorycki (kalamon) - GNU GPLv2 License")]
+[assembly: AssemblyCopyright("Copyright ©2008-2015 Janusz Gorycki (kalamon) - GNU GPLv2 License")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.2.1")]
-[assembly: AssemblyFileVersion("1.2.1")]
+[assembly: AssemblyVersion("1.2.2")]
+[assembly: AssemblyFileVersion("1.2.2")]

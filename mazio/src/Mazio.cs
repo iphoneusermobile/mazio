@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -115,7 +116,29 @@ namespace mazio {
 
         private readonly string runtimeArgs;
 
+        private enum ProcessDPIAwareness {
+            ProcessDPIUnaware = 0,
+            ProcessSystemDPIAware = 1,
+            ProcessPerMonitorDPIAware = 2
+        }
+
+        [DllImport("shcore.dll")]
+        private static extern int SetProcessDpiAwareness(ProcessDPIAwareness value);
+
+        private static void SetDpiAwareness(ProcessDPIAwareness awareness) {
+            try {
+                if (Environment.OSVersion.Version.Major >= 6) {
+                    SetProcessDpiAwareness(awareness);
+                }
+            }
+            catch (EntryPointNotFoundException)//this exception occures if OS does not implement this API, just ignore it.
+            {
+            }
+        }
+
         public Mazio() {
+            SetDpiAwareness(ProcessDPIAwareness.ProcessPerMonitorDPIAware);
+
             string[] args = Environment.GetCommandLineArgs();
             if (args.Length > 1)
                 runtimeArgs = args[1];
@@ -426,7 +449,7 @@ namespace mazio {
 
             int l = 255;
             try {
-                l = Math.Max(10, Math.Min(255, SettingsWrapper.getSettingValue(REG_OPACITY, 0)));
+                l = Math.Max(10, Math.Min(255, SettingsWrapper.getSettingValue(REG_OPACITY, 255)));
             } catch (NullReferenceException) {}
             trackbarOpacity.Value = l;
             setOpacity();
@@ -1096,7 +1119,7 @@ namespace mazio {
         private const string TXT_START = "Begin  Drawing";
 
         private static void setButtonParams(ButtonBase b) {
-            b.Font = new Font("Arial", 12.0F, FontStyle.Bold, GraphicsUnit.Point, 238);
+            b.Font = new Font("Arial", 20.0F, FontStyle.Bold, GraphicsUnit.Pixel, 238);
             b.ForeColor = Color.DarkGray;
             b.BackColor = Color.White;
             b.FlatAppearance.BorderSize = 0;
