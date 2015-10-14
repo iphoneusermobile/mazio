@@ -120,7 +120,6 @@ namespace mazio {
             Location = activeScreenBounds.Location;
             Cursor.Clip = activeScreenBounds;
             AutoScaleMode = AutoScaleMode.None;
-            AutoScale = false;
 
             Paint += grabberPaint;
             MouseClick += onMouseClick;

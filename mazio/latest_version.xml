@@ -1,14 +1,14 @@
 <versions>
   <!-- remember to always also update this file in SVN to support older mazio versions -->
-  <latest-version major="1" minor="2" revision="1" />
-  <download-url>http://mazio.googlecode.com/files/mazio-setup-1.2.1.exe</download-url>
+  <latest-version major="1" minor="2" revision="2" />
+  <download-url>https://github.com/kalamon/mazio/blob/master/releases/mazio-setup-1.2.2.exe</download-url>
   <release-notes>
     <![CDATA[
             <html><body>
-            <p align="center">With pleasure, Kalamon Software presents Mazio 1.2.1</p>
+            <p align="center">With pleasure, Kalamon Software presents Mazio 1.2.2</p>
             <p>changes:</p>
             <ul>
-              <li>fixed handling screenshots passed from <a href="http://www.kalamonsoft.com/dbjr">DeskBeam Junior</a> screencasting application</li>
+              <li>Hi DPI displays support</li>
             </ul>
             </body></html>
             ]]>

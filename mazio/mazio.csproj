@@ -886,7 +886,7 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>"c:\Program Files\NSIS\makensis.exe" $(ProjectDir)\setup.nsi
+    <PostBuildEvent>"c:\Program Files (x86)\NSIS\makensis.exe" $(ProjectDir)\setup.nsi
 copy $(TargetDir)\mazio.exe $(ProjectDir)\src\ffmazio\components
 "C:\Program Files\7-Zip\7z" a $(TargetDir)\ffmazio.xpi -tZip -xr!.svn $(ProjectDir)\src\ffmazio\*</PostBuildEvent>
   </PropertyGroup>
